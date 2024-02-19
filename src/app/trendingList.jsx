@@ -4,7 +4,7 @@ import {books} from './trending'
 import TrendingBook from './components/trendingBook';
 
 export default async function TrendingList() {
-    const trendingbook1 = await getTrending(books[0]);
+  /*  const trendingbook1 = await getTrending(books[0]);
     const trendingbook2 = await getTrending(books[1]);
     const trendingbook3 = await getTrending(books[2]);
     const trendingbook4 = await getTrending(books[3]);
@@ -20,8 +20,12 @@ export default async function TrendingList() {
 
     const allBooks = [...trendingbook1,...trendingbook2,...trendingbook3,...trendingbook4,...trendingbook5,...trendingbook6,...trendingbook7,
     ...trendingbook8,...trendingbook9,...trendingbook10,...trendingbook11,...trendingbook12,...trendingbook13]
-    console.log(allBooks)
-    
+    console.log(allBooks)*/
+    const allBooks = [];
+    for (let i in books){
+      const book = await getTrending(books[i]);
+      allBooks.push(...book);
+    }
   return (
     <div className='grid grid-cols-1 mx-2 md:mx-0 gap-6 md:grid-cols-4 md:gap-9 '>
         {allBooks?.map((book,index) => {
