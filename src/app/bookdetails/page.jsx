@@ -20,17 +20,19 @@ async function BookDetailsPage({searchParams}) {
           <p>{authorData.personal_name}</p>
 
           <div>
-          {workData.subjects.slice(0,6)?.map(
+          {workData.subjects?.slice(0,6)?.map(
             (topic,index) => (
               <p key={index}>{topic}</p>
             )
           )}
           </div>
-          {workData.subject_places.slice(0,6)?.map(
+        <div>
+        {workData.subject_places?.slice(0,5)?.map(
             (place,index) => (
               <p key={index}>{place}</p>
             )
           )}
+        </div>
       </div>
     </div>
   

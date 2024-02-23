@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export default async function getWorkDetails(workKey) {
     try{
-        const response = await axios.get(`https://openlibrary.org/${workKey}.json`)
+        const response = await axios.get(`https://openlibrary.org${workKey}.json`)
         return (await response.data);
     }catch(error){
         return(
