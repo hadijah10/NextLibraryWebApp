@@ -8,9 +8,7 @@ async function BookDetailsPage({searchParams}) {
   const workData = await getWorkDetails(searchParams.work)
   const editionData = await getEditionDetails(searchParams.edition);
   const authorData = await getAuthorDetails(searchParams.author_key);
-  console.log(searchParams.edition)
-  console.log(typeof(editionData.title))
-  console.log(typeof(workData.subjects))
+
   return (
    <div>
        <div className='flex flex-row'>
@@ -20,7 +18,7 @@ async function BookDetailsPage({searchParams}) {
       <div>
           <p> {editionData["title"]}</p>
           <p>{authorData.personal_name}</p>
-          
+
           <div>
           {workData.subjects.slice(0,6)?.map(
             (topic,index) => (
