@@ -11,6 +11,7 @@ export default function SearchData() {
   
       e.preventDefault();
       setIsSearching(true);
+ 
     
     }
 

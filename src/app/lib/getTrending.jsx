@@ -9,7 +9,7 @@ export default async function getTrending(bookTitle) {
 
   return response.json().docs;*/
   try{
-    const res = await axios.get(`https://openlibrary.org/search.json?title=${bookTitle}&fields=title,author_name,cover_i&limit=1&origin=*`);
+    const res = await axios.get(`https://openlibrary.org/search.json?title=${bookTitle}&fields=title,key,editions,author_name,author_key,cover_i&limit=1&origin=*`);
     return (await res.data.docs)
   }catch(e){
    // throw new Error('Failed to fetch');
