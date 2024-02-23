@@ -1,7 +1,8 @@
 import React from 'react'
 import getTrending from './lib/getTrending'
-import {books} from './trending'
+import {books} from './trendingBooks'
 import TrendingBook from './components/trendingBook';
+import Link from 'next/link';
 
 export default async function TrendingList() {
   /*  const trendingbook1 = await getTrending(books[0]);
@@ -31,9 +32,15 @@ export default async function TrendingList() {
         {allBooks?.map((book,index) => {
          
               return(                
-               <div key={index} className='h-47 drop-shadow-2xl flex justify-center place-items-center bg-slate-60 rounded-md'>
-                  <TrendingBook imageId={book.cover_i} author={book.author_name[0]} title={book.title}/>
-               </div>
+               <Link href = {{
+                pathname: "/bookdetails",
+                query: {
+                  work:book.key,
+                  edition:book.editions.docs[0].key,
+                  author_key:book.author_key[0]
+                }}} key={index} className='h-47 drop-shadow-2xl flex justify-center place-items-center bg-slate-60 rounded-md'>
+                  <TrendingBook imageId={book.cover_i} author_name={book.author_name[0]} title={book.title}/>
+               </Link>
 
             )
             
