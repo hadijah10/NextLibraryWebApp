@@ -8,7 +8,7 @@ async function BookDetailsPage({searchParams}) {
   const workData = await getWorkDetails(searchParams.work)
   const editionData = await getEditionDetails(searchParams.edition);
   const authorData = await getAuthorDetails(searchParams.author_key);
-console.log(typeof(workData.subject_places))
+
   return (
    <div>
        <div className='flex flex-row'>
