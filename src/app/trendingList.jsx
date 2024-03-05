@@ -30,7 +30,7 @@ export default async function TrendingList() {
   return (
     <div className='grid grid-cols-1 mx-2 md:mx-0 gap-6 md:grid-cols-4 md:gap-9 '>
         {allBooks?.map((book,index) => {
-         
+        // console.log(typeof(book?.author_key))
               return(                
                <Link href = {{
                 pathname: "/bookdetails",
